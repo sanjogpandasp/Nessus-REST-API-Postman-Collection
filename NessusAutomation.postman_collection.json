@@ -1,0 +1,2622 @@
+{
+	"variables": [],
+	"info": {
+		"name": "NessusAutomation",
+		"_postman_id": "da3b2c35-eff3-85ba-943c-56ee3da66c01",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"description": "",
+			"item": [
+				{
+					"name": "Nessus Login",
+					"request": {
+						"url": "{{NessusServerURL}}/session",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\", \"password\":\"nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Editor",
+			"description": "",
+			"item": [
+				{
+					"name": "Export an Audit file",
+					"request": {
+						"url": "{{NessusServerURL}}/editor/{type}/{object_id}/audits/{file_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a Template",
+					"request": {
+						"url": "{{NessusServerURL}}//editor/{type}/templates/{template_uuid}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Scan or Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/editor/{type}/{id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": "The type of object (scan or policy).  \nThe unique id of the object.  "
+					},
+					"response": []
+				},
+				{
+					"name": "Get Template List",
+					"request": {
+						"url": "{{NessusServerURL}}/editor/{type}/templates",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Plugin details",
+					"request": {
+						"url": "{{NessusServerURL}}//editor/policy/{policy_id}/families/{family_id}/plugins/{plugin_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File & Folders",
+			"description": "",
+			"item": [
+				{
+					"name": "Uploads a file",
+					"request": {
+						"url": "{{NessusServerURL}}/file/upload",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"no_enc\":\"1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create folder for current user",
+					"request": {
+						"url": "{{NessusServerURL}}//folders",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"foldername\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a folder",
+					"request": {
+						"url": "{{NessusServerURL}}/folders/{folder_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Rename a folder for current user",
+					"request": {
+						"url": "{{NessusServerURL}}//folders/{folder_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"renamedFolderName\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Returns current user's scan folders",
+					"request": {
+						"url": "{{NessusServerURL}}//folders/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"description": "",
+			"item": [
+				{
+					"name": "Add a user to group",
+					"request": {
+						"url": "{{NessusServerURL}}/groups/{group_id}/users/{user_id}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create a group",
+					"request": {
+						"url": "{{NessusServerURL}}/groups/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"GroupName\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a group",
+					"request": {
+						"url": "{{NessusServerURL}}//groups/{group_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user from a group",
+					"request": {
+						"url": "{{NessusServerURL}}/groups/{group_id}/users/{user_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Rename a group",
+					"request": {
+						"url": "{{NessusServerURL}}/groups/{group_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Rename a group\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get group list",
+					"request": {
+						"url": "{{NessusServerURL}}/group/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Rename a group\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users of a group",
+					"request": {
+						"url": "{{NessusServerURL}}/groups/{group_id}/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Rename a group\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mail Server",
+			"description": "",
+			"item": [
+				{
+					"name": "Change mail server setting",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/network/mail",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"smtp_host\":\"string\",\n\"smtp_port\":\"integer\",\n\"smtp_from\":\"smtp_host\",\n\"smtp_www_host\":\"string\",\n\"smtp_auth\":\"string\",\n\"smtp_user\":\"string\",\n\"smtp_pass\":\"string\",\n\"smtp_enc\":\"string\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET mail server setting",
+					"request": {
+						"url": "{{NessusServerURL}}//settings/network/mail",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nessus Agents",
+			"description": "",
+			"item": [
+				{
+					"name": "List Agents",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agents",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Agent",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agents/{agent_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add Agent",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups/{group_id}/agents/{agent_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Configure Agent Group",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups/{group_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"AgentGroupName\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Agent Group",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"AgentGroupName\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Agent Group from Scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups/{group_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an Agent from Agent Group",
+					"request": {
+						"url": "{{NessusServerURL}}//scanners/{scanner_id}/agent-groups/{group_id}/agents/{agent_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Details of Agent Group",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups/{group_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Agent group for a scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/agent-groups",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"description": "",
+			"item": [
+				{
+					"name": "Change Permission of Object",
+					"request": {
+						"url": "{{NessusServerURL}}/permissions/{object_type}/{object_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Return current object's permission",
+					"request": {
+						"url": "{{NessusServerURL}}/permissions/{object_type}/{object_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plugins & Plugin Rules",
+			"description": "",
+			"item": [
+				{
+					"name": "Get list of plugin families",
+					"request": {
+						"url": "{{NessusServerURL}}/plugins/families",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get plugins in a family",
+					"request": {
+						"url": "{{NessusServerURL}}/plugins/families/{id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get plugins details",
+					"request": {
+						"url": "{{NessusServerURL}}/plugins/plugin/{id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create plugin rule for current user",
+					"request": {
+						"url": "{{NessusServerURL}}/plugin-rules",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"plugin_id\":\"integer\",\n\"type\":\"string\",\n\"host\":\"string\",\n\"date\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plugin",
+					"request": {
+						"url": "{{NessusServerURL}}/plugin-rules/{rule_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Plugin for current user",
+					"request": {
+						"url": "{{NessusServerURL}}/plugin-rules/{rule_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"plugin_id\":\"integer\",\n\"type\":\"string\",\n\"host\":\"string\",\n\"date\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get plugin rules for current user",
+					"request": {
+						"url": "{{NessusServerURL}}/plugin-rules",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get rule details",
+					"request": {
+						"url": "{{NessusServerURL}}/plugin-rules/{rule_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"acls\": [{\"type\": \"default\", \"permissions\": 16}, {\"type\": \"user\", \"permissions\": 64, \"name\": \"admin\", \"id\": 1, \"owner\": 1}]}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policies",
+			"description": "",
+			"item": [
+				{
+					"name": "List Policies",
+					"request": {
+						"url": "{{NessusServerURL}}/policies",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Configure a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}//policies/12",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Copy a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies/{policy_id}/copy",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": {template_uuid},\r\n    \"audits\": {\r\n        \"feed\": {\r\n            \"add\": [\r\n                {\r\n                    \"id\": {audit_id},\r\n                    \"variables\": {\r\n                        \"1\": {audit_variable_value},\r\n                        \"2\": {audit_variable_value},\r\n                        \"3\": {audit_variable_value}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"credentials\": {\r\n        \"add\": {\r\n            {credential_category}: {\r\n                {credential_name}: [\r\n                    {\r\n                        {credential_input_name}: {string}\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    },\r\n    \"plugins\": {\r\n        {plugin_family_name}: {\r\n            \"status\": {string},\r\n            \"individual\": {\r\n                {plugin_id}: {string}\r\n            }\r\n        }\r\n    },\r\n    \"scap\": {\r\n        \"add\": {\r\n            {scap_category}: [\r\n                {\r\n                    {scap_input_name}: {string}\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"settings\": {\r\n        \"acls\": [\r\n            permission Resource\r\n        ],\r\n        \"additional_snmp_port1\": {string},\r\n        \"additional_snmp_port2\": {string},\r\n        \"additional_snmp_port3\": {string},\r\n        \"adtran_aos_offline_configs\": {string},\r\n        \"allow_post_scan_editing\": {string},\r\n        \"apm_force_updates\": {string},\r\n        \"apm_update_timeout\": {string},\r\n        \"arp_ping\": {string},\r\n        \"av_grace_period\": {string},\r\n        \"aws_ap_northeast_1\": {string},\r\n        \"aws_ap_southeast_1\": {string},\r\n        \"aws_ap_southeast_2\": {string},\r\n        \"aws_eu_west_1\": {string},\r\n        \"aws_sa_east_1\": {string},\r\n        \"aws_ui_region_type\": {string},\r\n        \"aws_us_east_1\": {string},\r\n        \"aws_us_gov_west_1\": {string},\r\n        \"aws_us_west_1\": {string},\r\n        \"aws_us_west_2\": {string},\r\n        \"aws_use_https\": {string},\r\n        \"aws_verify_ssl\": {string},\r\n        \"brocade_offline_configs\": {string},\r\n        \"check_crl\": {string},\r\n        \"cisco_config_to_audit\": {string},\r\n        \"cisco_offline_configs\": {string},\r\n        \"dell_f10_offline_configs\": {string},\r\n        \"description\": {string},\r\n        \"detect_ssl\": {string},\r\n        \"display_unreachable_hosts\": {string},\r\n        \"dont_use_ntlmv1\": {string},\r\n        \"enable_admin_shares\": {string},\r\n        \"enum_domain_users_end_uid\": {string},\r\n        \"enum_domain_users_start_uid\": {string},\r\n        \"enum_local_users_end_uid\": {string},\r\n        \"enum_local_users_start_uid\": {string},\r\n        \"enumerate_all_ciphers\": {string},\r\n        \"extremeos_offline_configs\": {string},\r\n        \"fast_network_discovery\": {string},\r\n        \"fireeye_offline_configs\": {string},\r\n        \"host_whitelist\": {string},\r\n        \"http_login_auth_regex_nocase\": {string},\r\n        \"http_login_auth_regex_on_headers\": {string},\r\n        \"http_login_invert_auth_regex\": {string},\r\n        \"http_login_max_redir\": {string},\r\n        \"http_login_method\": {string},\r\n        \"huawei_offline_configs\": {string},\r\n        \"icmp_ping\": {string},\r\n        \"icmp_ping_retries\": {string},\r\n        \"icmp_unreach_means_host_down\": {string},\r\n        \"junos_offline_configs\": {string},\r\n        \"log_live_hosts\": {string},\r\n        \"log_whole_attack\": {string},\r\n        \"max_checks_per_host\": {string},\r\n        \"max_hosts_per_scan\": {string},\r\n        \"max_simult_tcp_sessions_per_host\": {string},\r\n        \"max_simult_tcp_sessions_per_scan\": {string},\r\n        \"modbus_end_reg\": {string},\r\n        \"modbus_start_reg\": {string},\r\n        \"name\": {string},\r\n        \"netapp_offline_configs\": {string},\r\n        \"network_receive_timeout\": {string},\r\n        \"network_type\": {string},\r\n        \"never_send_win_creds_in_the_clear\": {string},\r\n        \"only_portscan_if_enum_failed\": {string},\r\n        \"patch_audit_over_rexec\": {string},\r\n        \"patch_audit_over_rsh\": {string},\r\n        \"patch_audit_over_telnet\": {string},\r\n        \"ping_the_remote_host\": {string},\r\n        \"portscan_range\": {string},\r\n        \"procurve_config_to_audit\": {string},\r\n        \"procurve_offline_configs\": {string},\r\n        \"provided_creds_only\": {string},\r\n        \"reduce_connections_on_congestion\": {string},\r\n        \"report_paranoia\": {string},\r\n        \"report_superseded_patches\": {string},\r\n        \"report_verbosity\": {string},\r\n        \"request_windows_domain_info\": {string},\r\n        \"reverse_lookup\": {string},\r\n        \"safe_checks\": {string},\r\n        \"scan_netware_hosts\": {string},\r\n        \"scan_network_printers\": {string},\r\n        \"scan_webapps\": {string},\r\n        \"silent_dependencies\": {string},\r\n        \"slice_network_addresses\": {string},\r\n        \"smtp_domain\": {string},\r\n        \"smtp_from\": {string},\r\n        \"smtp_to\": {string},\r\n        \"snmp_port\": {string},\r\n        \"snmp_scanner\": {string},\r\n        \"sonicos_offline_configs\": {string},\r\n        \"ssh_client_banner\": {string},\r\n        \"ssh_known_hosts\": {string},\r\n        \"ssh_netstat_scanner\": {string},\r\n        \"ssh_port\": {string},\r\n        \"ssl_prob_ports\": {string},\r\n        \"start_cotp_tsap\": {string},\r\n        \"start_remote_registry\": {string},\r\n        \"stop_cotp_tsap\": {string},\r\n        \"stop_scan_on_disconnect\": {string},\r\n        \"svc_detection_on_all_ports\": {string},\r\n        \"syn_firewall_detection\": {string},\r\n        \"syn_scanner\": {string},\r\n        \"tcp_ping\": {string},\r\n        \"tcp_ping_dest_ports\": {string},\r\n        \"test_default_oracle_accounts\": {string},\r\n        \"test_local_nessus_host\": {string},\r\n        \"thorough_tests\": {string},\r\n        \"udp_ping\": {string},\r\n        \"udp_scanner\": {string},\r\n        \"unscanned_closed\": {string},\r\n        \"verify_open_ports\": {string},\r\n        \"win_known_bad_hashes\": {string},\r\n        \"win_known_good_hashes\": {string},\r\n        \"wmi_netstat_scanner\": {string},\r\n        \"wol_mac_addresses\": {string},\r\n        \"wol_wait_time\": {string}\r\n    }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies/{policy_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies/{policy_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Import a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies/import",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Export a Policy",
+					"request": {
+						"url": "{{NessusServerURL}}/policies/{policy_id}/export",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"file\":\"importpolicyfilename.nessus\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Properties",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Nessus server properties",
+					"request": {
+						"url": "{{NessusServerURL}}/server/properties",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Nessus server status",
+					"request": {
+						"url": "{{NessusServerURL}}/server/status",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proxy",
+			"description": "",
+			"item": [
+				{
+					"name": "Change Proxy Setting",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/network/proxy",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"proxy\":\"string\",\n  \"proxy_auth\":\"string\",\n  \"proxy_password\":\"string\",\n  \"proxy_port\":\"string\",\n  \"proxy_username\":\"string\",\n  \"user_agent\":\"string\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proxy settings",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/network/proxy",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"proxy\":\"string\",\n  \"proxy_auth\":\"string\",\n  \"proxy_password\":\"string\",\n  \"proxy_port\":\"string\",\n  \"proxy_username\":\"string\",\n  \"user_agent\":\"string\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scanners",
+			"description": "",
+			"item": [
+				{
+					"name": "Control a scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/scans/{scan_uuid}/control",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\":\"stop or pause or resume\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get scanner details",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/{scanner_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get aws targets",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/aws-targets",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get aws key",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/key",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get running scans",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/{scanner_id}/scans",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Enables or disables link state of scanner",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/{scanner_id/link",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": "Pass 1 enable the link. Pass 0 to disable."
+					},
+					"response": []
+				},
+				{
+					"name": "Get scanners list",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of running scans",
+					"request": {
+						"url": "{{NessusServerURL}}/scanners/local/scans",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scans",
+			"description": "",
+			"item": [
+				{
+					"name": "Get scan attachment file",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/attachments/{attachment_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"force_plugin_update\":\"integer\",\n  \"force_ui_update\":\"integer\",\n  \"finish_update\":\"integer\",\n  \"registration_code\":\"integer\",\n  \"aws_update_interval\":\"integer\"\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Configure schedule or policy parameter of scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uuid\": {template_uuid},\n    \"settings\": {\n        \"name\": {string},\n        \"description\": {string},\n        \"emails\": {string},\n        \"enabled\": {boolean},\n        \"launch\": {string},\n        \"folder_id\": {integer},\n        \"policy_id\": {integer},\n        \"scanner_id\": {integer},\n        \"text_targets\": {string},\n        \"use_dashboard\": {boolean}\n    }\n}\n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Copy a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/copy",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"folder_id\":\"integer\",\n  \"history\":\"boolean\",\n  \"name\":\"string\"\n  \n}\n  \n  "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": {template_uuid},\r\n    \"settings\": {\r\n        \"name\": {string},\r\n        \"description\": {string},\r\n        \"emails\": {string},\r\n        \"enabled\": \"true\",\r\n        \"launch\": {string},\r\n        \"folder_id\": {integer},\r\n        \"policy_id\": {integer},\r\n        \"scanner_id\": {integer},\r\n        \"text_targets\": {string},\r\n        \"use_dashboard\": {boolean}\r\n    }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Deletes a scan. NOTE: Scans in running, paused or stopping states can not be deleted."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete history of a scan",
+					"request": {
+						"url": "{{NessusServerURL}}//scans/{scan_id}/history/{history_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get scan details",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Download exported scan(scan id based)",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/export/{file_id}/download",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Download exported scan (token based)",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/exports/{token}/download",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Export a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/export",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"format\":\"Nessus, HTML, PDF, CSV, or DB\",\n  \"password\":\"(*Required when exporting as DB\",\n  \"chapters\":\"The chapters to include in the export (expecting a semi-colon delimited string comprised of some combination of the following options: vuln_hosts_summary, vuln_by_host, compliance_exec, remediations, vuln_by_plugin, compliance)\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get exported scan status",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/export/{file_id}/status",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"format\":\"Nessus, HTML, PDF, CSV, or DB\",\n  \"password\":\"(*Required when exporting as DB\",\n  \"chapters\":\"The chapters to include in the export (expecting a semi-colon delimited string comprised of some combination of the following options: vuln_hosts_summary, vuln_by_host, compliance_exec, remediations, vuln_by_plugin, compliance)\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get host details",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/hosts/{host_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"format\":\"Nessus, HTML, PDF, CSV, or DB\",\n  \"password\":\"(*Required when exporting as DB\",\n  \"chapters\":\"The chapters to include in the export (expecting a semi-colon delimited string comprised of some combination of the following options: vuln_hosts_summary, vuln_by_host, compliance_exec, remediations, vuln_by_plugin, compliance)\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Import a .nessus scan file",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/import",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"file\":\".nessus file\",\n  \"folder_id  \":\"The id of the destination folder. If not specified, the default folder will be used.\",\n  \"password\":\"string\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Launch a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/launch",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"file\":\".nessus file\",\n  \"alt_targets  \":\"array\" //If specified, these targets will be scanned instead of the default. Value can be an array where each index is a target, or an array with a single index of comma separated targets.\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get scan list",
+					"request": {
+						"url": "{{NessusServerURL}}/scans",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "folder_id",
+								"value": "integer",
+								"description": ""
+							},
+							{
+								"key": "last_modification_date",
+								"value": "integer",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"file\":\".nessus file\",\n  \"alt_targets  \":\"array\" //If specified, these targets will be scanned instead of the default. Value can be an array where each index is a target, or an array with a single index of comma separated targets.\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Pause a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/pause",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get plugin output",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/scans/{scan_id}/hosts/{host_id}/plugins/{plugin_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							},
+							{
+								"key": "history_id",
+								"value": "integer",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Change scan read-status",
+					"request": {
+						"url": "{{NessusServerURL}}//scans/{scan_id}/status",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"read\":\"boolean\"//true or false\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Resume a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/resume",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Enables or disables a scan schedule",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/schedule",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"enabled\":\"boolean\"//  Enables or disables the scan schedule.  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Stop a scan",
+					"request": {
+						"url": "{{NessusServerURL}}/scans/{scan_id}/stop",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get timezone list for creating a scan",
+					"request": {
+						"url": "{{NessusServerURL}}//scans/timezones",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Session",
+			"description": "",
+			"item": [
+				{
+					"name": "Create a new session",
+					"request": {
+						"url": "{{NessusServerURL}}/session",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\":\"string\",\n  \"password\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Logout/Delete logged in User",
+					"request": {
+						"url": "{{NessusServerURL}}/session",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Changes settings for the current user",
+					"request": {
+						"url": "{{NessusServerURL}}/session",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"string\",\n  \"email\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get user session data",
+					"request": {
+						"url": "{{NessusServerURL}}/session",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"string\",\n  \"email\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Change password of current user",
+					"request": {
+						"url": "{{NessusServerURL}}/session/chpasswd",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"current_password\":\"string\",\n  \"password\":\"newpassword\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Generate API key for logged in user",
+					"request": {
+						"url": "{{NessusServerURL}}/session/keys",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Advanced Settings",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/advanced",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Generate a new key",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/scanner/rekey",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get key",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/scanner/key",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "set Link",
+					"request": {
+						"url": "{{NessusServerURL}}/settings/scanner",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Links the local scanner to a Nessus Manager. Unlink the scanner by setting 'linked_to' to 'null'. "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Create new user",
+					"request": {
+						"url": "{{NessusServerURL}}/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\":\"string\",\n  \"password\":\"string\",\n  \"permissions\":\"string\",\n  \"name\":\"string\",\n  \"email\":\"string\",\n  \"type\":\"string\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"url": "{{NessusServerURL}}/users/{user_id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit existing user",
+					"request": {
+						"url": "{{NessusServerURL}}/users/{user_id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"permissions\":\"string\",\n  \"name\":\"string\",\n  \"email\":\"string\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"url": "{{NessusServerURL}}/users/{user_id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get users list",
+					"request": {
+						"url": "{{NessusServerURL}}/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Change password of a user",
+					"request": {
+						"url": "{{NessusServerURL}}/users/{user_id}/chpasswd",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\":\"newpassword\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Generate API Keys of user",
+					"request": {
+						"url": "{{NessusServerURL}}/users/{user_id}/keys",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-ApiKeys",
+								"value": "accessKey=229ffac4169ca6777c9c716ee0c32b6f1a933b7e7b3036400f6cb6e535063c0e; secretKey=8cecaeef20024eab135f926e2375377161060bc8614911712f577823e9dd22e2;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
